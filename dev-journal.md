@@ -6,7 +6,9 @@ This is my journal for this project. Just a record for my thoughts and how I mig
 
 Began the project with a
 
-> npm init -y
+```
+npm init -y
+```
 
 - Need [Mongo DB cloud](https://www.mongodb.com/cloud)
 - npm packages
@@ -21,7 +23,9 @@ Began the project with a
     Validates any body data thats coming in, email , password etc.
   - Mongoose
     Abstraction layer to interact w/ database, allows you to create models
-    > npm i express bcrypt jsonwebtoken config express-validator mongoose
+    ```
+    npm i express bcrypt jsonwebtoken config express-validator mongoose
+    ```
 
 - npm dep dependencies
 
@@ -49,7 +53,11 @@ First you have to create an express object, in this case we call it app
 ```
 const express = require("expresse")
 const app = express()
+```
+
 You can then have the app respond to GET responses by using the .get() method
+
+```
 app.get("/", (req,res) => res.join({msg : "Welcome to the contact keeper api" }))
 ```
 
