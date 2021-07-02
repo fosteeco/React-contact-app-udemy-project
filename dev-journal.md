@@ -69,3 +69,5 @@ app.get("/", (req,res) => res.join({msg : "Welcome to the contact keeper api" })
 
 When you send a GET request, you'll receive a json with {msg: "Welcome to the conact keeper api"}.
 Seems like my postman won't get the new results unless I restart the server completely.
+
+## Backend Routes
