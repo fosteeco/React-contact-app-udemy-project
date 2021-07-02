@@ -13,15 +13,15 @@ npm init -y
 - Need [Mongo DB cloud](https://www.mongodb.com/cloud)
 - npm packages
 
-  - Express
-    WEb framework, handles our routing
+  - express
+    WEB framework, handles our routing
   - Bcryptjs
     Handles hashing passwords
-  - Jsonwebtoken
+  - jsonwebtoken
     Create a jwt to send back and forth to access protected routes on backend
-  - Express-validator
+  - express-validator
     Validates any body data thats coming in, email , password etc.
-  - Mongoose
+  - mongoose
     Abstraction layer to interact w/ database, allows you to create models
     ```
     npm i express bcrypt jsonwebtoken config express-validator mongoose
@@ -44,6 +44,12 @@ npm init -y
   "server": "nodemon server.js",
 ```
 
+This allows us to start the express server wtih
+
+```
+npm run server
+```
+
 ### Express testing
 
 Looks like you can do some pretty neet stuff with express()
@@ -51,14 +57,15 @@ You call it in using a different syntax than your standard import React from "re
 First you have to create an express object, in this case we call it app
 
 ```
-const express = require("expresse")
-const app = express()
+const express = require("express");
+const app = express():
 ```
 
 You can then have the app respond to GET responses by using the .get() method
 
 ```
-app.get("/", (req,res) => res.join({msg : "Welcome to the contact keeper api" }))
+app.get("/", (req,res) => res.join({msg : "Welcome to the contact keeper api" }));
 ```
 
-When you send a GET request, you'll receive a json with {msg: "Welcoem to the conact keeper api"}
+When you send a GET request, you'll receive a json with {msg: "Welcome to the conact keeper api"}.
+Seems like my postman won't get the new results unless I restart the server completely.
