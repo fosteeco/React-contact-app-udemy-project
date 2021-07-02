@@ -70,4 +70,29 @@ app.get("/", (req,res) => res.join({msg : "Welcome to the contact keeper api" })
 When you send a GET request, you'll receive a json with {msg: "Welcome to the conact keeper api"}.
 Seems like my postman won't get the new results unless I restart the server completely.
 
-## Backend Routes
+## 40. Backend Routes
+
+Registering routes in express JS is pretty simple.
+it follows this syntax:
+
+```
+const express = require("express");
+const router = express.Router();
+
+// @route       GET api/contacts
+// @desc        Get all users contacts
+// @access      Private
+router.get("/", (req, res) => {
+  res.send("Get all contacts");
+});
+
+```
+
+This example was taken from /routes/contacts.js. The syntax above using @route, @desc, @access is what Brad suggests to make the code easy to read.
+The server.js file acceses this using this syntax:
+
+```
+app.use("/api/contacts", require("./routes/contacts"));
+```
+
+Other http methods can also be defined like POST, PUT, and DELETE
