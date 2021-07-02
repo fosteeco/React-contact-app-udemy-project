@@ -1,8 +1,13 @@
 /* The entry point to the backend */
 const { Router } = require("express");
 const express = require("express");
+const { connect } = require("mongoose");
+const connectDB = require("./config/db");
 
 const app = express();
+
+// Connect Database
+connectDB();
 
 /* Adding route  */
 /* Can send file with res.sendFile */
