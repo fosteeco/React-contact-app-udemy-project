@@ -201,3 +201,24 @@ router.get("/", auth, async (req, res) => {...}
 ```
 
 In the router function we can use req.user because the auth decodes the jsonwebtoken and sets req.user to decoded.user. Neat stuff.
+
+## 47. Contact Model & Get Contacts Route
+
+So in this w ecreated the file /models/Contact.js . Copied contents of modeles/Users.js as boiler plate. Email no longer unique so that field was removed. The interesting part of this models is referencing the users mongoDB collection:
+
+```
+user: {
+  type: mongoose.Schema.Types.ObjectId,
+  ref: "users" /* <-- The name of mongoDB collection*/,
+},
+```
+
+Then in the /routes/contacts.js we pull in the auth from /middleware/auth because protected components require authentication. In the get all contacts we pass the auth so we can find the contacts for the user with the correct Jsonwebtoken. Here's what that code is:
+
+```
+const contacts = await Contact.find({ users: req.user.id }).sort({
+  date: -1,
+});
+```
+
+This will pull all contacts for that user into an array that sorts by the latest date added.
