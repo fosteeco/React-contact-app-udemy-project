@@ -151,3 +151,12 @@ With our anonymous function (req, res) in users.js we use validationResult on th
 
 Postman is a pretty neat tool for testing this stuff. In the body section of our request we can send a json object with the name,email,and password fields. If any fail the server returns an array containing the errors.
 That ties up this section.
+
+## 43. Hash Passwords & Register Route
+
+Aight this section was neat. We got to store a user to our database. All of the work was done in the /routes/users.js file. After user successfully submits a form we check our database to see if their email already exists. If it does we throw an error. Else we create a new user with their information.
+
+Next we create a salt that will hash our passwords so we don't store passwords as plain text. BIG no no.
+the user.password is set to the salted version then we use user.save() to store it to the database.
+
+If we encounter an error at any point because of all the functions that return promises, the end user will not see the message. They will see a status 500 server error. The true error is logged to the console.
