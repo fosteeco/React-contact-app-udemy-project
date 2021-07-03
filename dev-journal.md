@@ -222,3 +222,23 @@ const contacts = await Contact.find({ users: req.user.id }).sort({
 ```
 
 This will pull all contacts for that user into an array that sorts by the latest date added.
+
+## 48. Add Contact Route
+
+This section gave me some problems but it was pretty good.
+
+We fleshed out the post method for /routes/contacts.js . Found out you can pass two forms of validation through these app.methods using an array[auth, [check, check,check]]. In this case we only had to check for name because it's just a contact.
+
+Here are some problems I ran into:
+
+ran into annoying issue: contact validation failed: password: Path `password` is required
+also had an issue with getting all the contacts. I found that it was a typo in the line where it gets all contacts
+
+```
+try {
+const contacts = await Contact.find({ user: req.user.id }).sort({ /* <--- issue was on this line, was users and should be user as it is now and it works! */
+    date: -1,
+  });
+  res.json(contacts);
+} catch (err){...}
+```
