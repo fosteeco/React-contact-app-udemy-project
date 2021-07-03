@@ -106,3 +106,48 @@ This part went over the /config/db.js file which includes settings for connectin
   "mongoURI": "<your.mongodb.clusterURL.that.you.got.from.the.website"
 }
 ```
+
+## 42. User Model & Validation
+
+This video had a lot going on. First we created the model for Users in the file /models/User.js . With the mongoose package we can define the field that we want in our model. Once that was created we brought it into our /routes/users.js file. In here we brought in our express validator using this statement:
+
+```
+const { check, validationResult } = require("express-validator");
+```
+
+In our post method we created an array of check functions:
+
+```
+[
+    check("name", "Please add name").not().isEmpty(),
+    check("email", "Please include a valid email ").isEmail(),
+    check(
+      "password",
+      "Please enter a password with 6 or more characters"
+    ).isLength({ min: 6 }),
+  ]
+```
+
+To test our code we used Postman to send an http request. We first have to include these two lines to be able to use middleware as a testing mechanism:
+
+```
+//init MiddleWare
+app.use(express.json({ extended: false }));
+
+```
+
+With our anonymous function (req, res) in users.js we use validationResult on the req to see if it produced any errors. Here's what that looks like :
+
+```
+(req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
+    // res.send(req.body);
+    res.send("passed");
+  }
+```
+
+Postman is a pretty neat tool for testing this stuff. In the body section of our request we can send a json object with the name,email,and password fields. If any fail the server returns an array containing the errors.
+That ties up this section.

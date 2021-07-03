@@ -5,6 +5,8 @@ const { connect } = require("mongoose");
 const connectDB = require("./config/db");
 
 const app = express();
+//init MiddleWare
+app.use(express.json({ extended: false }));
 
 // Connect Database
 connectDB();
