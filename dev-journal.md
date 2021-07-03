@@ -160,3 +160,11 @@ Next we create a salt that will hash our passwords so we don't store passwords a
 the user.password is set to the salted version then we use user.save() to store it to the database.
 
 If we encounter an error at any point because of all the functions that return promises, the end user will not see the message. They will see a status 500 server error. The true error is logged to the console.
+
+## 44. Create & Respond With JSON Web Token
+
+We need these tokens to verify the logged in user. [jwt](https://jwt.io/). We use the user's id as the payload. The secret used to generate this token is kept in the /config/default.json file. To access this we use the config package. We also pass an object with any options we want as parameters with their value. Here's what was added to default.json:
+
+```
+"jwtSecret": "supersecretverycomplexpassword"
+```
