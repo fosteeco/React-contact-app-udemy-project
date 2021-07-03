@@ -185,3 +185,19 @@ if (!isMatch) {
 ```
 
 If it passes then we get the Json web token.
+
+## 46. Auth Middleware & Protecting Routes
+
+A new folder middleware was created. This file contains a function that can verify that a "x-auth-token" is in the header of the document. Here is the code that finds it:
+
+```
+const token = req.header("x-auth-token");
+```
+
+The function also takes in a function called next. This function runs when the authentication is verified. To use this function we import it and pass it into a router method. Here's how we did it in the /routes/auth.js :
+
+```
+router.get("/", auth, async (req, res) => {...}
+```
+
+In the router function we can use req.user because the auth decodes the jsonwebtoken and sets req.user to decoded.user. Neat stuff.
