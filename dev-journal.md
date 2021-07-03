@@ -231,7 +231,7 @@ We fleshed out the post method for /routes/contacts.js . Found out you can pass 
 
 Here are some problems I ran into:
 
-ran into annoying issue: contact validation failed: password: Path `password` is required
+ran into annoying issue: contact validation failed: password: Path \`password\` is required
 also had an issue with getting all the contacts. I found that it was a typo in the line where it gets all contacts
 
 ```
