@@ -96,3 +96,13 @@ app.use("/api/contacts", require("./routes/contacts"));
 ```
 
 Other http methods can also be defined like POST, PUT, and DELETE
+
+## 41. Connect MongoDB To Our App
+
+This part went over the /config/db.js file which includes settings for connecting to the mongoDB cloud instance. The config package allows us to define our mongoURI in the /config/default.json file. Here's what the json file looks like :
+
+```
+{
+  "mongoURI": "<your.mongodb.clusterURL.that.you.got.from.the.website"
+}
+```
