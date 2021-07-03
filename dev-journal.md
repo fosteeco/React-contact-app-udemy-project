@@ -242,3 +242,7 @@ const contacts = await Contact.find({ user: req.user.id }).sort({ /* <--- issue 
   res.json(contacts);
 } catch (err){...}
 ```
+
+## 49. Contact Update & Delete Routes
+
+Can now update and delete a contact. All code in this section was in the /routes/contacts.js. Contact fields can be updated independently.
