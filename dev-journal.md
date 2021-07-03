@@ -168,3 +168,20 @@ We need these tokens to verify the logged in user. [jwt](https://jwt.io/). We us
 ```
 "jwtSecret": "supersecretverycomplexpassword"
 ```
+
+## 45. Authenticate Route
+
+This was a neet section. We learned how we can authenticate a user. We copied most of the code from /routes/users.js to /routes/auth.js because they use a lot of the same information. But we only need the email and password now.
+
+We still pass an array of checks. This time we search if the email exists in the database. If we don't we give a 400 error.
+
+Then we check the password with the bcrypt package. Here's what that looks like :
+
+```
+const isMatch = await bcrypt.compare(password, user.password);
+if (!isMatch) {
+  return res.status(400).json({ msg: "Invalid credentials" });
+}
+```
+
+If it passes then we get the Json web token.
