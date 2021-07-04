@@ -339,3 +339,7 @@ contact.id = uuidv4();
 ## 55. Delete Contact From UI
 
 Deleting contact is temporary.
+
+## 56. Set & Clear Current Contact
+
+New piece of state is attached called current. This is where the contact that is being edited will be stored. Functions for setting and clearing the current were added.
