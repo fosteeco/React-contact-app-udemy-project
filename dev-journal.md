@@ -357,3 +357,7 @@ contacts: state.contacts.map((contact) =>
 ```
 
 Just beautiful
+
+## 58. Contact Filter Form & State
+
+We use regular expressions in this section. This was cool to see. We also created a new component for contacts called ContactFilter that creates a search form. We used a hook called useRef. We used it instead of using a piece of state. The useEffect hook was also used to prevent text from staying inside the form
