@@ -1,5 +1,5 @@
 import React, { useReducer } from "react";
-import uuid from "uuid"; /* Used to generate a random id  */
+import { v4 as uuidv4 } from "uuid"; /* Used to generate a random id  */
 import ContactContext from "./contactContext";
 import contactReducer from "./contactReducer";
 import {
@@ -42,6 +42,11 @@ const ContactState = (props) => {
   const [state, dispatch] = useReducer(contactReducer, initialState);
 
   // Add contact
+  const addContact = (contact) => {
+    /* Not using mongodb yet so we use uuid  */
+    contact.id = uuidv4();
+    dispatch({ type: ADD_CONTACT, payload: contact });
+  };
 
   // Delete contact
 
@@ -59,6 +64,7 @@ const ContactState = (props) => {
     <ContactContext.Provider
       value={{
         contacts: state.contacts,
+        addContact,
       }}
     >
       {props.children}

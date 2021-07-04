@@ -319,3 +319,19 @@ When it should've been
 ```
 
 Contact and contactItem components have been implemented. Font seems to not be working
+
+## 54. ContactForm Component
+
+The contact from can now update the information in the DOM. No updates are made throug the backend yet.
+
+The way uuid is imported didn't work for me. I had to do it this way:
+
+```
+import { v4 as uuidv4 } from "uuid"; /* Used to generate a random id  */
+```
+
+Then I could call the function like this:
+
+```
+contact.id = uuidv4();
+```
