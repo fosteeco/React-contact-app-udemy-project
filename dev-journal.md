@@ -343,3 +343,17 @@ Deleting contact is temporary.
 ## 56. Set & Clear Current Contact
 
 New piece of state is attached called current. This is where the contact that is being edited will be stored. Functions for setting and clearing the current were added.
+
+## 57. Edit & Update Contact Action
+
+Update and edit functional through the UI now.\
+I really like the method that was used to update the contacts.\
+since the contact array is immutable we create a new array using the .map method Here's the code:
+
+```
+contacts: state.contacts.map((contact) =>
+  contact.id === action.payload.id ? action.payload : contact
+),
+```
+
+Just beautiful
