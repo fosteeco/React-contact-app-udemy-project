@@ -277,3 +277,18 @@ Also added to the git Ignore so we don't uploa the modules that are in the react
 ```
 client/node_modules
 ```
+
+## 51. Cleanup, Navbar & Router Setup
+
+Added more stuff to .gitignore
+
+Installing npm stuff in /client
+
+```
+npm i axios react-router-dom uuid react-transition-group
+```
+
+- uuid
+  -- generates unique ids
+
+New pages were added.
