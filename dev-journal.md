@@ -301,3 +301,21 @@ We have a state context and reducer setup.\
 My vim workflow is superb.
 Hardcoding the contacts in state was a breeze. I visually selected the phone number using vi' then did a search and replace using :s/1/2/g .
 That was a great vim command. Swapping between termials is also a great feature that I found on this site: https://t.co/1TeTVq3TIc?amp=1 . Same as vim movements so the muscle memory really feels good.
+
+## 53. Contacts & ContactItem Components
+
+Error: Objects are not valid as a React child (found: object with keys {}). If you meant to render a collection of children, use an array instead.
+\
+This was happpening because in my Homes.js I was using
+
+```
+{{/* ContactForm */}}
+```
+
+When it should've been
+
+```
+{/* ContactForm */}
+```
+
+Contact and contactItem components have been implemented. Font seems to not be working

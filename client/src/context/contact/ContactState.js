@@ -15,25 +15,27 @@ import {
 /* Create initial state */
 const ContactState = (props) => {
   const initialState = {
-    /* Using hardcoded data for now  */
     contacts: [
       {
         id: 1,
         name: "Gibby Cilon",
         email: "Giby@gmail.com",
         phone: "111-111-1111",
+        type: "personal",
       },
       {
         id: 2,
         name: "Yolo Yeezy",
         email: "YeezyY@gmail.com",
         phone: "222-222-2222",
+        type: "personal",
       },
       {
         id: 3,
         name: "Harley Shay",
         email: "Harleys@gmail.com",
         phone: "333-333-3333",
+        type: "professional",
       },
     ],
   };
