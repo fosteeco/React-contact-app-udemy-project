@@ -6,6 +6,9 @@
   "scripts": {
     "start": "node server.js",
     "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "clientinstall": "npm install --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client \" ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -14,6 +17,7 @@
   "dependencies": {
     "bcrypt": "^5.0.1",
     "config": "^3.3.6",
+    "create-react-app": "^4.0.3",
     "express": "^4.17.1",
     "express-validator": "^6.12.0",
     "jsonwebtoken": "^8.5.1",

@@ -246,3 +246,34 @@ const contacts = await Contact.find({ user: req.user.id }).sort({ /* <--- issue 
 ## 49. Contact Update & Delete Routes
 
 Can now update and delete a contact. All code in this section was in the /routes/contacts.js. Contact fields can be updated independently.
+
+## 50. Setup React & Concurrently
+
+Started with :
+
+```
+npx create-react-app client
+```
+
+this will create the react app in a folder called client
+npm start -> runs react dev server
+These scripts were added to package.json
+
+```
+"client": "npm start --prefix client",
+"clientinstall": "npm install --prefix client",
+"dev": "concurrently \"npm run server\" \"npm run client \" ",
+```
+
+This was added to the package.json in the react /client folder
+
+```
+"proxy": "https://localhost:5000"
+```
+
+This allows us to use the proxy name instead of having to type localhost:5000 for everything.
+Also added to the git Ignore so we don't uploa the modules that are in the react-app
+
+```
+client/node_modules
+```
