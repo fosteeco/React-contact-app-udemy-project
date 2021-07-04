@@ -335,3 +335,7 @@ Then I could call the function like this:
 ```
 contact.id = uuidv4();
 ```
+
+## 55. Delete Contact From UI
+
+Deleting contact is temporary.
