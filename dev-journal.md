@@ -292,3 +292,12 @@ npm i axios react-router-dom uuid react-transition-group
   -- generates unique ids
 
 New pages were added.
+
+## 52. Contacts Context & Global State
+
+Getting complicated. Want to revisit this section to gain better understanding.
+Now we're implementing context for our contacts
+We have a state context and reducer setup.\
+My vim workflow is superb.
+Hardcoding the contacts in state was a breeze. I visually selected the phone number using vi' then did a search and replace using :s/1/2/g .
+That was a great vim command. Swapping between termials is also a great feature that I found on this site: https://t.co/1TeTVq3TIc?amp=1 . Same as vim movements so the muscle memory really feels good.
