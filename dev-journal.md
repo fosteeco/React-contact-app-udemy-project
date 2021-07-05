@@ -397,3 +397,7 @@ Here's process: goto beginning of line, move forward two words, visually select,
 ## 61. Register & Login Forms
 
 Register and login forms created in the comoponents/auth folder. Also added links to them in the navbar. Seems like I've got some styling issues. Forms look different than the tutorial.
+
+## 62. Alert Context, State & Component
+
+Alert context, state, component, and reducer implemented. Form validation can be done through the markup or one of our alerts. I think I prefer the minLength attribute in the markup. Writing more code seems unnecessary.
