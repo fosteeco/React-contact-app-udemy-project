@@ -361,3 +361,35 @@ Just beautiful
 ## 58. Contact Filter Form & State
 
 We use regular expressions in this section. This was cool to see. We also created a new component for contacts called ContactFilter that creates a search form. We used a hook called useRef. We used it instead of using a piece of state. The useEffect hook was also used to prevent text from staying inside the form
+
+## 59. Basic Add & Delete Animation
+
+Using the react-transition-group we were able to add animations to the contact items.
+http://reactcommunity.org/react-transition-group/transition-group
+
+## 60. Auth Context & Initial State
+
+Auth context, state, and reducer were created.
+Typing out the types.js stuff is annoying.\
+I did a neat vim trick to make it a little easier but haven't found a way to do it that is clean. I recorded a macro that highlights the variable name copies it then pastes it to the bottom of the file. This allowed me to run that macro as much as I needed to get all the variable names so I could import them into the AuthState.js file. It worked well but felt like a hack. The thing is using the mouse would probably be more efficient for that task. But if there are hundreds of variable names vim makes quick work where a mouse would take forever so it's still a good practice to figure out those vim movements.
+
+```
+export const REGISTER_SUCCESS = "REGISTER_SUCCESS";
+export const REGISTER_FAIL = "REGISTER_FAIL";
+export const USER_LOADED = "USER_LOADED";
+export const AUTH_ERROR = "AUTH_ERROR";
+export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
+export const LOGIN_FAIL = "LOGIN_FAIL";
+export const LOGOUT = "LOGOUT";
+export const CLEAR_ERRORS = "CLEAR_ERRORS";
+```
+
+As you can see you can't make a vertical selection with C-v so you'd probably have to make some regular expression or record a macro. \
+Here's the macro I created and stored in my "a" key:
+
+```
+0wwveyGA
+<Esc>p''j
+```
+
+Here's process: goto beginning of line, move forward two words, visually select, go to end of word, yank, go to end of file, go into insert mode on a new line, Exit insert mode, paste, go to previous cursor position, go to new line.
