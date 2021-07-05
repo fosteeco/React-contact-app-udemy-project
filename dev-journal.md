@@ -393,3 +393,7 @@ Here's the macro I created and stored in my "a" key:
 ```
 
 Here's process: goto beginning of line, move forward two words, visually select, go to end of word, yank, go to end of file, go into insert mode on a new line, Exit insert mode, paste, go to previous cursor position, go to new line.
+
+## 61. Register & Login Forms
+
+Register and login forms created in the comoponents/auth folder. Also added links to them in the navbar. Seems like I've got some styling issues. Forms look different than the tutorial.
