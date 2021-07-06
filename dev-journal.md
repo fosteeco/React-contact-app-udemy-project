@@ -419,3 +419,7 @@ User login will now work. Reused most code from Registration.js .
 ## 66. Logout & Navbar
 
 Was able to pull info about logged in user into the Navbar component by using AuthContext. Still haven't implemented private routes so the home page is visible to all users because when the page runs the load user function the backend api will return a 401 unauthorized because it doesn't have a token.
+
+## 67. PrivateRoute Component
+
+Private route was created. /src/components/PrivateRoute.js is a functional comoponent that takes in a component and other parameters using rest notation. It checks to see if the use is authenticated and they're done loading. They are redirected to login if they aren't authenticated. If they are the component is rendered with the parameters that were passed in.
