@@ -427,3 +427,9 @@ Private route was created. /src/components/PrivateRoute.js is a functional comop
 ## 68. Add Contact
 
 Logged in Users can now add contacts and they will be stored in the database. The contact.id is now contact.\_id because that is how mongoDb stores ids for database entries. Headers dont' have to include the x-auth-token because it is stored globally.
+
+## 69. Get & Clear Contacts
+
+Contacts are now pulled from the database when the user logs in. This is done with the contactState. A new function getContacts was used. No headers are needed since it is only a get request and we have the x-auth-token set globally when the user logs in. The reducer sets the contacts to the response.\
+We also implemented the loading spinner whenever loading is true. This was copied from the previous project.\
+To ensure that contacts are not seen by users who log on the same session we had to implement a clear contacts function. We did this in the contactState again. We just set everything in the state to null. To ensure this function is called when the user logs out we added it to the Navbar component's onLogout function.
