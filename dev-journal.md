@@ -423,3 +423,7 @@ Was able to pull info about logged in user into the Navbar component by using Au
 ## 67. PrivateRoute Component
 
 Private route was created. /src/components/PrivateRoute.js is a functional comoponent that takes in a component and other parameters using rest notation. It checks to see if the use is authenticated and they're done loading. They are redirected to login if they aren't authenticated. If they are the component is rendered with the parameters that were passed in.
+
+## 68. Add Contact
+
+Logged in Users can now add contacts and they will be stored in the database. The contact.id is now contact.\_id because that is how mongoDb stores ids for database entries. Headers dont' have to include the x-auth-token because it is stored globally.

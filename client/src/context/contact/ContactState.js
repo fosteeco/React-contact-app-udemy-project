@@ -1,5 +1,5 @@
 import React, { useReducer } from "react";
-import { v4 as uuidv4 } from "uuid"; /* Used to generate a random id  */
+import axios from "axios";
 import ContactContext from "./contactContext";
 import contactReducer from "./contactReducer";
 import {
@@ -10,45 +10,34 @@ import {
   UPDATE_CONTACT,
   FILTER_CONTACTS,
   CLEAR_FILTER,
+  CONTACT_ERROR,
 } from "../types";
 
 /* Create initial state */
 const ContactState = (props) => {
   const initialState = {
-    contacts: [
-      {
-        id: 1,
-        name: "Gibby Cilon",
-        email: "Giby@gmail.com",
-        phone: "111-111-1111",
-        type: "personal",
-      },
-      {
-        id: 2,
-        name: "Yolo Yeezy",
-        email: "YeezyY@gmail.com",
-        phone: "222-222-2222",
-        type: "personal",
-      },
-      {
-        id: 3,
-        name: "Harley Shay",
-        email: "Harleys@gmail.com",
-        phone: "333-333-3333",
-        type: "professional",
-      },
-    ],
+    contacts: [],
     /* Want to put the contact to edit in this parameter */
     current: null,
     filtered: null,
+    error: null,
   };
   const [state, dispatch] = useReducer(contactReducer, initialState);
 
   // Add contact
-  const addContact = (contact) => {
+  const addContact = async (contact) => {
     /* Not using mongodb yet so we use uuid  */
-    contact.id = uuidv4();
-    dispatch({ type: ADD_CONTACT, payload: contact });
+    // contact.id = uuidv4();
+    const config = {
+      /* Don't have to worry about sending token because it is set globally with the /utils/setAuthToken.js */
+      headers: { "Content-Type": "application/json" },
+    };
+    try {
+      const res = await axios.post("api/contacts", contact, config);
+      dispatch({ type: ADD_CONTACT, payload: res.data });
+    } catch (error) {
+      dispatch({ type: CONTACT_ERROR, payload: error.response.msg });
+    }
   };
 
   // Delete contact
@@ -87,6 +76,7 @@ const ContactState = (props) => {
         contacts: state.contacts,
         current: state.current,
         filtered: state.filtered,
+        error: state.error,
         addContact,
         deleteContact,
         setCurrent,
