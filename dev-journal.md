@@ -489,3 +489,11 @@ heroku create
 git add .
 git commit -m "Prepare for deploy"
 ```
+
+Add heroku as remote repo:
+
+```
+heroku git:remote -a cryptic-forest-60568
+git push heroku main
+heroku open
+```
