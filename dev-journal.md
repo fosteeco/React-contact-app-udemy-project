@@ -447,3 +447,45 @@ We also updated the way that contacts are added to the array. We put it in front
 ## 71. Update Contacts
 
 In contact state we updated the updateContact function to make a put call to our api. We also had to update the reducer to use \_id instead of id because we are using mongoDb's id generation instead of UUID.
+
+## 72. Prepare & Deploy to Heroku
+
+Create and login to heroku account
+https://dashboard.heroku.com/
+Install Heroku cli
+https://devcenter.heroku.com/articles/heroku-cli
+To ensure heroku cli is installed run:
+
+```
+heroku --version
+```
+
+Added this to sever.js
+
+```
+// Serve static assets in production
+if (process.env.NODE_ENV === "production") {
+  // Set static folder
+  app.use(express.static("client/build"));
+
+  app.get("*", (req, res) =>
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"))
+  );
+}
+
+```
+
+Added new script to package.json:
+
+```
+"heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
+```
+
+Command line:
+
+```
+heroku login
+heroku create
+git add .
+git commit -m "Prepare for deploy"
+```
