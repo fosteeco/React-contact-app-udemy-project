@@ -404,5 +404,6 @@ Alert context, state, component, and reducer implemented. Form validation can be
 
 ## 63. User Registration
 
-User registration now accesses the database. The register.js component runs a function from AuthState called register
+User registration now accesses the database. The register.js component runs a function from AuthState called register.
 Had an issue wher axios wasn't sending the request to the correct url. Fixed this by correcting the url in the proxy of the react folder. It contained an https url when it should've been http. Restarting the server made this take effect.
+Also had an issue where my alert wasn't working. Restarting the server fixed it.
