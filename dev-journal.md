@@ -402,6 +402,7 @@ Register and login forms created in the comoponents/auth folder. Also added link
 
 Alert context, state, component, and reducer implemented. Form validation can be done through the markup or one of our alerts. I think I prefer the minLength attribute in the markup. Writing more code seems unnecessary.
 
-## 63
+## 63. User Registration
 
-Had an issue wher axios wasn't sending the request to the correct url.
+User registration now accesses the database. The register.js component runs a function from AuthState called register
+Had an issue wher axios wasn't sending the request to the correct url. Fixed this by correcting the url in the proxy of the react folder. It contained an https url when it should've been http. Restarting the server made this take effect.
