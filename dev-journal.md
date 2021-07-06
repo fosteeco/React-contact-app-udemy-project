@@ -415,3 +415,7 @@ Registration will now save the user's information to their browser local storage
 ## 65. User Login
 
 User login will now work. Reused most code from Registration.js .
+
+## 66. Logout & Navbar
+
+Was able to pull info about logged in user into the Navbar component by using AuthContext. Still haven't implemented private routes so the home page is visible to all users because when the page runs the load user function the backend api will return a 401 unauthorized because it doesn't have a token.
