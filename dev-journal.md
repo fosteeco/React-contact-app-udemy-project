@@ -443,3 +443,7 @@ const { _id } = contact;
 ```
 
 We also updated the way that contacts are added to the array. We put it in front then spread the rest of the current array because MongoDB sorts the items by the latest ones that were added.
+
+## 71. Update Contacts
+
+In contact state we updated the updateContact function to make a put call to our api. We also had to update the reducer to use \_id instead of id because we are using mongoDb's id generation instead of UUID.
