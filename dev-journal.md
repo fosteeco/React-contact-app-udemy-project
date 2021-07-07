@@ -497,3 +497,20 @@ heroku git:remote -a cryptic-forest-60568
 git push heroku main
 heroku open
 ```
+
+Wow so that was a hassle getting it to work. First I made a mistake in that I didn't allow access from any ip address before deployment so I had an error connecting to the mongoDB database. Then I removed my ip address from the ones listed in MongoDB cloud without realizing that I need to add access from anywhere after that. Also I was trying to make a production branch following one of the comments in the video. THey reccomended these instructions: https://github.com/bradtraversy/devconnector_2.0#deploy-to-heroku
+Which are actually supper helpful if you follow the correctly.\
+I failed to realize that I was still pushing my main github branch when I should've been pushing the production branch. Very silly mistake. But here are the correct commands for that process:
+
+```
+git checkout -b production
+git add -f config/production.json
+git commit -m 'ready to deploy'
+heroku create
+git push heroku production:main
+```
+
+That link even mentions:
+
+> Don't forget to make sure your production database is not whitelisted in MongoDB Atlas, otherwise the database connection will fail and your app will crash.
+> haha, it pays to pay attention.
