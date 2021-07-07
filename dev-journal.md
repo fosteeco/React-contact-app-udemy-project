@@ -493,7 +493,7 @@ git commit -m "Prepare for deploy"
 Add heroku as remote repo:
 
 ```
-heroku git:remote -a cryptic-forest-60568
+heroku git:remote -a yourproject-name
 git push heroku main
 heroku open
 ```
@@ -515,3 +515,14 @@ That link even mentions:
 > Don't forget to make sure your production database is not whitelisted in MongoDB Atlas, otherwise the database connection will fail and your app will crash.
 
 haha, it pays to pay attention.
+
+## Final thoughts
+
+Well it is fully implemented at
+https://cfoster-react-contact-app.herokuapp.com/login \
+
+Overall I enjoyed this project. I had issues here and there but that's all a part of the development process. Following a tutorial really doesn't do much for you anyways. This doesn't mean that I could create this app from scratch or something similar. But it does help me realize what can be done with react and express. It was cool to see how we interact with the database. Soo much of my learning has been about frontend styling and it's really refreshing to see a fullstack setup. Heroku deployment was also interesting. The context, state, and reducer loop was also re-engrained to my memory. The implementation of functional components is also really starting to stick. Like useEffect, useContext, useState are feeling familiar. The JSON webtoken was also a great tool to be exposed to. Writing it to the local storage never needing to write it into the headers was clever. All of these things are pretty fundamental to the react framework. Seeing an implementation is a great way to gain some understanding of how you make it all work together.\
+One thing I would've like to see is a real database deployment instead of use MongoCloud. But I understand that these cloud services have some features that allow for great scalability. Still got a lot to learn. \
+I also would've like to see a more complex registration process for this app. It kind of sucks that there's no way to reset the password or confirm user accounts. Maybe I could try to implement that to increase my skills with react.
+
+I'm excited to see what the next project in the course has to offer. Gonna be learning redux.
